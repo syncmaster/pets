@@ -1,0 +1,36 @@
+<div class="content list-page">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="text-center">Списък на Домашни любимци</h1>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordred table-striped">
+            <thead>
+                <th>Номер</th>
+                <th>Име</th>
+                <th>Тип</th>
+                <th>Информация</th>
+                <th>Дата на добавяне</th>
+            </thead>
+            <tbody>
+                {section name=i loop=$RESULT}
+                    <tr>
+                        <td> {$RESULT[i].id|escape}</td>
+                        <td class="pet_name"> {$RESULT[i].pet_name|escape}</td>
+                        <td> {$RESULT[i].type|escape}</td>
+                        <td> {$RESULT[i].description|escape}</td>
+                        <td> {$RESULT[i].date|escape}</td>
+                    </tr>
+                {sectionelse}
+                <tr>
+                    <td colspan="5" class="text-center">Няма резултати.</td>
+                </tr>
+                {/section}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    var searchWord = "{$SEARCH_WORD}";
+</script>

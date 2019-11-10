@@ -1,0 +1,25 @@
+
+<div class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <form method="POST" class="search-pet" action="{route}list{/route}">
+                <div class="form-group">
+                    <label for="name">Име на любимеца</label>
+                    <input type="text" name="name" id="name" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="type">Тип на любимеца:</label>
+                    <select name="type" class="form-control" id="type">
+                        {section name=i loop=$TYPES}
+                            <option value="{$TYPES[i].id|escape}">{$TYPES[i].name|escape}</option>
+                        {/section}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="submit" class="btn btn-primary">Запис</button>
+                    <a href="{route}home{/route}" class="btn btn-default">Върни се обратно</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

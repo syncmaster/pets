@@ -1,0 +1,46 @@
+<div class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <form method="post" class="add-pet" action="{route}add{/route}">
+                <div class="form-group">
+                    <label for="name">Име на любимеца:</label>
+                    <input type="text" name="name" class="form-control" value="{$RESULT.name|escape}" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="type">Тип на любимеца:</label>
+                    <select name="type" class="form-control" id="type">
+                        {section name=i loop=$TYPES}
+                            <option {if $RESULT.type eq $TYPES[i].id} selected="selected"{/if} value="{$TYPES[i].id|escape}">{$TYPES[i].name|escape}</option>
+                        {/section}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Описание на любимеца</label>
+                    <textarea class="form-control" name="description" id="description" cols="30" rows="10">{$RESULT.description|escape}</textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="submit" class="btn btn-primary">Запис</button>
+                    <a href="{route}home{/route}" class="btn btn-default">Върни се обратно</a>
+                </div>
+                {if $ERRORS}
+                <div class="errors alert alert-danger">
+                    <ul>
+                        {foreach from=$ERRORS item=ERROR}
+                        <li>{$ERROR|escape}</li>
+                        {/foreach}
+                    </ul>
+                </div>
+                {/if} {if $SUCCESS}
+                <div class="alert alert-success">
+                    <p>{$SUCCESS|escape}</p>
+                </div>
+                {/if} {if $FAILED}
+                <div class="alert alert-danger">
+                    <p>{$FAILED|escape}</p>
+                </div>
+                {/if}
+            </form>
+        </div>
+
+    </div>
+</div>
