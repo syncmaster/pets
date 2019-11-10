@@ -1,6 +1,11 @@
 <div class="content">
     <div class="row">
         <div class="col-xs-12">
+            <h3 class="text-center"> Добавяне на домашен любимец</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             <form method="post" class="add-pet" action="{route}add{/route}">
                 <div class="form-group">
                     <label for="name">Име на любимеца:</label>
@@ -15,7 +20,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="description">Описание на любимеца</label>
+                    <label for="description">Описание на любимеца:</label>
                     <textarea class="form-control" name="description" id="description" cols="30" rows="10">{$RESULT.description|escape}</textarea>
                 </div>
                 <div class="form-group">

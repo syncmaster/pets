@@ -52,6 +52,12 @@ h1 {
     margin-bottom: 30px;
 }
 
+.content h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #00a2ff;
+}
+
 .content {
     margin-top: 100px;
 }
